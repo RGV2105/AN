@@ -1,18 +1,27 @@
 <!-- Lista de cartas -->
-<div class="container">
-    <div class="row mt-3 mb-3 g-3">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-            <div class="card">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row mb-3 g-3">
+    <ng-container
+        *ngIf="pokemonsAll && pokemonsAll.results && pokemonsAll.results.length>0"
+        ; else noPokemons>
+        <div class="col-3" *ngFor="let pokemon of pokemonsAll.results">
+            <div class="card flixed-card" >
+                <img [src]="pokemon.data?.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default"
+                 class="card-img-top flixed-img" alt="...">
+                <div class="card-body flixed-body">
+                    <h5 class="card-title">{{pokemon.name}}</h5>
+                    <p class="card-text">{{pokemon.data?.base_experience}}</p>
+                    <a [href]="pokemon.url" class="btn btn-primary">Mas Informacion</a>
                 </div>
             </div>
         </div>
-        <!-- Duplicar el div anterior para más tarjetas, si es necesario -->
-    </div>
+
+    </ng-container>
 </div>
 
-
+<ng-template #noPokemons>
+    <div class="col -12">
+        <div class="alert alert-warning" role="alert">
+            No Pokemons found
+        </div>
+    </div>
+</ng-template>

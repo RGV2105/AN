@@ -8,7 +8,7 @@ export interface Pokemons {
 export interface Result {
     name: string;
     url:  string;
-    data: Pokemon;
+    data?: Pokemon;
 }
 
 export interface Pokemon {

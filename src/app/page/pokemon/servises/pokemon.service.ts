@@ -9,6 +9,7 @@ import { Pokemon, Pokemons } from '../interfaces/pokemons';
   providedIn: 'root'
 })
 export class PokemonService {
+  [x: string]: any;
 
   private apiURLBase: string= 'https://pokeapi.co/api/v2/pokemon/';
 
@@ -20,9 +21,9 @@ export class PokemonService {
     return this.htpp.get<Pokemons>(this.apiURLBase);
 
   }
-  getPoquemon(termino: string | number ): Observable< Pokemon > {
-    return this.htpp.get<Pokemon>(this.apiURLBase);
+  getPokemon(termino: string | number ): Observable< Pokemon > {
+    return this.htpp.get<Pokemon>(`${this.apiURLBase}/${termino}`);
   }
- 
+
 
 }
