@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-paginacion',
+  selector: 'Dbz-pagi',
   standalone: true,
   imports: [],
   templateUrl: './paginacion.component.html',
