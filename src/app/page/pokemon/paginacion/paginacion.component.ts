@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-paginacion',
+  selector: 'pokemon-pagi',
   standalone: true,
   imports: [],
   templateUrl: './paginacion.component.html',
