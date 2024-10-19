@@ -23,18 +23,21 @@ export class PokemonComponent implements OnInit {
   pokemons: Pokemons | undefined ;
 
   constructor(
-    private _srcPokemon: PokemonService
+    private _srvPokemon: PokemonService
   ) {}
   ngOnInit(): void {
-    this._srcPokemon.getPokemons().subscribe((pokemonall) => {
+    this._srvPokemon.getPokemons().subscribe((pokemonall) => {
       pokemonall.results.forEach((pokemon) => {
-        this._srcPokemon.getPokemon(pokemon.name).subscribe((pokemonData) => {
+        this._srvPokemon.getPokemon(pokemon.name).subscribe((pokemonData) => {
           pokemon.data = pokemonData;
+          this._srvPokemon.nextURL= pokemonall.next;
+          this._srvPokemon.prevURL= pokemonall.previous;
         });
       });
       this.pokemons = pokemonall;
     });
   }
   
-
+  setNewPokemon(PokemonsNews: Pokemons): void {this.pokemons = PokemonsNews;}
+    
 }
