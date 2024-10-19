@@ -13,10 +13,10 @@ import { DbzService } from './servises/dbz.service';
     PaginacionComponent
   ],
   templateUrl: './dbz.component.html',
-  styleUrls: ['./dbz.component.css'] // Corregido 'styleUrl' a 'styleUrls'
+  styleUrl: './dbz.component.css'
 })
-export class DbzComponent implements OnInit { // Cambiado de 'PokemonComponent' a 'DbzComponent'
-  dbzs: Dbzs | undefined; // Cambiado 'pokemons' a 'dbzs' para mejor coherencia
+export class DbzComponent implements OnInit { 
+  dbzs: Dbzs | undefined; 
 
   constructor(
     private _srcDbz: DbzService
@@ -24,12 +24,12 @@ export class DbzComponent implements OnInit { // Cambiado de 'PokemonComponent' 
 
   ngOnInit(): void {
     this._srcDbz.getDbzs().subscribe((dbzAll) => {
-      dbzAll.items.forEach((dbz) => { // Corregido 'results' a 'items'
-        this._srcDbz.getDbz(dbz.name).subscribe((dbzData) => {
+      dbzAll.items.forEach((dbz) => { 
+        this._srcDbz.getDbz(dbz.id).subscribe((dbzData) => {
           dbz.Data = dbzData;
         });
       });
-      this.dbzs = dbzAll; // Corregido 'this.Dbzs' a 'this.dbzs'
+      this.dbzs = dbzAll; 
     });
   }
 }

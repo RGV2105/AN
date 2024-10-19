@@ -4,10 +4,10 @@
     <ng-container
         *ngIf="dbzAll && dbzAll.items && dbzAll.items.length > 0"
         ; else noDbzCharacters>
-        <div class="col-3" *ngFor="let dbz of dbzAll.items">
+        <div class="col-6" *ngFor="let dbz of dbzAll.items">
             <div class="card flixed-card">
                 <img [src]="dbz.Data?.image"
-                     class="card-img-top flixed-img" alt="Imagen de {{dbz.name}}">
+                     class="card-img-top flixed-img" alt="...">
                 <div class="card-body flixed-body">
                     <h5 class="card-title">{{ dbz.name }}</h5>
                     <p class="card-text">{{ dbz.Data?.description }}</p>
@@ -29,3 +29,8 @@
         </div>
     </div>
 </ng-template>
+
+
+
+
+                     

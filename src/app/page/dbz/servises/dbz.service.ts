@@ -7,20 +7,20 @@ import { Dbz, Dbzs } from '../interfaces/dbzs';
   providedIn: 'root'
 })
 export class DbzService {
-  private apiURLBase: string= 'https://dragonball-api.com/api/characters';
+  private apiURLBase: string = 'https://dragonball-api.com/api/characters';
 
   constructor(
-    private htpp: HttpClient
+    private http: HttpClient
   ) { }
 
- getDbzs(): Observable <Dbzs> {
-  return this.htpp.get<Dbzs>(this.apiURLBase)
- }
-
- getDbz(termino: string | number ): Observable< Dbz > {
-  return this.htpp.get<Dbz>(`${this.apiURLBase}/${termino}`);
-}
+  getDbzs(): Observable<Dbzs> {
+    return this.http.get<Dbzs>(this.apiURLBase);
   }
+
+  getDbz(termino: number): Observable<Dbz> {
+    return this.http.get<Dbz>(`${this.apiURLBase}/${termino}`);
+  }
+}
 
 
 
