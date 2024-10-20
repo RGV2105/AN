@@ -1,8 +1,7 @@
 export interface Dbzs {
-    items: Item[];
     meta:  Meta;
     links: Links;
-    
+    items: Item[];
        
 }
 

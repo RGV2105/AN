@@ -1,9 +1,25 @@
-<nav aria-label="Page navigation example">
-    <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-  </nav>
+<div class="row mt-2 mb-2">
+  <div class="col-12">
+    <nav aria-label="Paginación de personajes de Dragon Ball Z">
+      <ul class="pagination justify-content-center">
+        <!-- Botón para la página anterior -->
+        <li class="page-item" [ngClass]="{'disabled': !prevURL}">
+          <a class="page-link"
+             (click)="prevURL ? loadDbzs(prevURL) : $event.preventDefault()"
+             [attr.aria-disabled]="!prevURL">
+            Anterior
+          </a>
+        </li>
+
+        <!-- Botón para la página siguiente -->
+        <li class="page-item" [ngClass]="{'disabled': !nextURL}">
+          <a class="page-link"
+             (click)="nextURL ? loadDbzs(nextURL) : $event.preventDefault()"
+             [attr.aria-disabled]="!nextURL">
+            Siguiente
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>

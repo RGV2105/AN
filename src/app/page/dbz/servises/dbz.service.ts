@@ -9,17 +9,37 @@ import { Dbz, Dbzs } from '../interfaces/dbzs';
 export class DbzService {
   private apiURLBase: string = 'https://dragonball-api.com/api/characters';
 
+  private next: string|null = null;
+  private previous: string|null = null;
+
   constructor(
     private http: HttpClient
   ) { }
 
-  getDbzs(): Observable<Dbzs> {
+  getDbzs(url:string=this.apiURLBase): Observable<Dbzs> {
     return this.http.get<Dbzs>(this.apiURLBase);
   }
 
-  getDbz(termino: number): Observable<Dbz> {
+  getDbz(termino: number | string): Observable<Dbz> {
     return this.http.get<Dbz>(`${this.apiURLBase}/${termino}`);
   }
+
+  set nextURL(url: string | null){
+    this.next = url;
+  }
+  set prevURL(url: string | null){
+    this.previous = url;
+  }
+
+
+  get nextURL(): string | null {
+    return this.next; 
+  }
+
+  get prevURL(): string | null{
+    return this.previous;
+  }
+
 }
 
 

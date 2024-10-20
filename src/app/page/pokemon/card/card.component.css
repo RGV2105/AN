@@ -1,3 +1,12 @@
+/* Estilos para la lista de cartas */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
 .flixed-card {
     width: 100%;
     height: 250px;
@@ -6,23 +15,74 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-
+    border: 2px solid #ff0000; /* Borde inspirado en la Pokébola */
+    border-radius: 12px;
+    background: linear-gradient(180deg, #ffcc00, #fff); /* Fondo con degradado amarillo a blanco */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+.flixed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 
 .flixed-img {
     width: auto;
     height: 100%;
     max-width: 80%;
     object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.flixed-body{
-flex-grow: 1;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-align-items: center;
-text-align: center;
+.flixed-card:hover .flixed-img {
+    transform: scale(1.1); /* Zoom en la imagen al pasar el mouse */
+}
+
+.flixed-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    border-top: 2px solid #3b4cca; /* Azul estilo Pokémon */
+    width: 100%;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3b4cca; /* Azul inspirado en los juegos de Pokémon */
+    text-transform: capitalize; /* Capitalizar los nombres de los Pokémon */
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.btn-primary {
+    background: #ff3d3d; /* Rojo estilo Pokébola */
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #ff0000; /* Rojo más fuerte para el hover */
+}
+
+/* Estilo para el mensaje de "No Pokémons found" */
+.alert-warning {
+    background: #ffeb3b; /* Amarillo brillante */
+    color: #333;
+    border: 1px solid #fdd835; /* Amarillo más oscuro */
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
 }
