@@ -1,11 +1,16 @@
 
+
+
 <div class="row">
-    <dbz-search (eventSearch)="searchDbz($event)" />
+  <!-- Componente de búsqueda de personajes -->
+  <dbz-search (eventSearch)="searchDbz($event)"></dbz-search>
 </div>
 
-<Dbz-pagi (eventNewDbzs)="setNewDbz($event)"/>
+<!-- Componente de paginación -->
+<Dbz-pagi (eventNewDbzs)="setNewDbz($event)"></Dbz-pagi>
 
+<!-- Componente de tarjetas de personajes -->
+<Dbz-card [dbzAll]="dbzs"></Dbz-card>
 
-<Dbz-card [dbzAll]="dbzs" />
-
+<!-- Componente de paginación repetido si es necesario, por ejemplo, al final de la lista -->
 <Dbz-pagi (eventNewDbzs)="setNewDbz($event)"/>

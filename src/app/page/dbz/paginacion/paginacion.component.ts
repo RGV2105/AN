@@ -15,6 +15,8 @@ import { Dbzs } from '../interfaces/dbzs';
 export class PaginacionComponent {
 
   @Output() public eventNewDbzs = new EventEmitter<Dbzs>();
+  // Añadir propiedad para controlar la visibilidad de la paginación
+  public isSearching: boolean = false; // Cambia esto según sea necesario
 
   constructor(
     private _srvDbz: DbzService
@@ -45,4 +47,9 @@ export class PaginacionComponent {
       });
     });
   }
+  // Método para actualizar el estado de búsqueda
+  updateSearchState(isSearching: boolean): void {
+    this.isSearching = isSearching;
+  }
+
 }

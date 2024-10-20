@@ -45,3 +45,6 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
+.pagination-hidden {
+  display: none; /* Oculta el elemento */
+}

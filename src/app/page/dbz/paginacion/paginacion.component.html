@@ -1,7 +1,7 @@
 <div class="row mt-2 mb-2">
   <div class="col-12">
     <nav aria-label="Paginación de personajes de Dragon Ball Z">
-      <ul class="pagination justify-content-center">
+      <ul class="pagination justify-content-center" [ngClass]="{'pagination-hidden': isSearching}">
         <!-- Botón para la página anterior -->
         <li class="page-item" [ngClass]="{'disabled': !prevURL}">
           <a class="page-link"
