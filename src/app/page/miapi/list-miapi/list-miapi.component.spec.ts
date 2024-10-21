@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchComponent } from './search.component';
+import { ListMiapiComponent } from './list-miapi.component';
 
-describe('SearchComponent', () => {
-  let component: SearchComponent;
-  let fixture: ComponentFixture<SearchComponent>;
+describe('ListMiapiComponent', () => {
+  let component: ListMiapiComponent;
+  let fixture: ComponentFixture<ListMiapiComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SearchComponent]
+      imports: [ListMiapiComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SearchComponent);
+    fixture = TestBed.createComponent(ListMiapiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
