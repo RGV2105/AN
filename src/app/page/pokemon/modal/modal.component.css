@@ -1,0 +1,56 @@
+/* Modal general */
+.modal-content {
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-radius: 0.5rem; /* Esquinas redondeadas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+/* Encabezado del modal */
+.modal-header {
+    border-bottom: 2px solid #007bff; /* Línea de separación inferior */
+}
+
+/* Título del modal */
+.modal-title {
+    font-size: 1.5rem; /* Tamaño del título */
+    font-weight: bold; /* Negrita */
+    color: #007bff; /* Color azul */
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    padding: 1.5rem; /* Espaciado del cuerpo */
+}
+
+/* Imagen del Pokémon */
+.modal-body img {
+    border: 2px solid #007bff; /* Borde azul alrededor de la imagen */
+    border-radius: 0.5rem; /* Esquinas redondeadas para la imagen */
+}
+
+/* Listas desordenadas */
+.list-unstyled {
+    padding-left: 0; /* Sin indentación */
+}
+
+/* Habilidades de Pokémon */
+.modal-body .mb-2 {
+    margin-bottom: 1rem; /* Espacio entre secciones */
+}
+
+/* Tipos de Pokémon */
+.badge {
+    font-size: 0.9rem; /* Tamaño de fuente de las etiquetas */
+    padding: 0.4rem 0.6rem; /* Espaciado interno */
+}
+
+/* Botones en el pie del modal */
+.modal-footer .btn {
+    background-color: #007bff; /* Fondo azul para botones */
+    color: white; /* Texto blanco */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.modal-footer .btn:hover {
+    background-color: #0056b3; /* Fondo azul más oscuro al pasar el mouse */
+}

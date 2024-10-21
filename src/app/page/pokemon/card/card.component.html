@@ -4,13 +4,22 @@
         *ngIf="pokemonsAll && pokemonsAll.results && pokemonsAll.results.length>0"
         ; else noPokemons>
         <div class="col-3" *ngFor="let pokemon of pokemonsAll.results">
-            <div class="card flixed-card" >
-                <img [src]="pokemon.data?.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default"
-                 class="card-img-top flixed-img" alt="...">
+            <div class="card flixed-card">
+                <img
+                    [src]="pokemon.data?.sprites?.versions?.['generation-v']?.['black-white']?.animated?.front_default"
+                    class="card-img-top flixed-img" alt="...">
                 <div class="card-body flixed-body">
                     <h5 class="card-title">{{pokemon.name}}</h5>
                     <p class="card-text">{{pokemon.data?.base_experience}}</p>
-                    <a [href]="pokemon.url" class="btn btn-primary">Mas Informacion</a>
+                    <div class="card-body fixed-body">
+                        <li>
+                           <button class="btn btn-outline-primary"
+                            (click)="openModal(pokemon.data!)">
+                            Más Información
+                            </button> 
+                        </li>
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -25,3 +34,5 @@
         </div>
     </div>
 </ng-template>
+
+<pokemon-modal />

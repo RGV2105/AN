@@ -1,5 +1,5 @@
 import { isPlatformBrowser, NgFor, NgIf, TitleCasePipe } from '@angular/common';
-import { Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, Input, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Pokemon } from '../../pokemon/interfaces/pokemons';
 
 @Component({
@@ -14,8 +14,8 @@ import { Pokemon } from '../../pokemon/interfaces/pokemons';
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
-export class ModalComponent {
-
+export class ModalComponent implements AfterViewInit {
+  
   @Input() public pokemon: Pokemon = {
     name: '',
     height: 0,
@@ -25,42 +25,50 @@ export class ModalComponent {
     }
   } as Pokemon;
 
-  private bootdtrapModal: any;
+  private bootstrapModal: any; // Corregido de "bootdtrapModal" a "bootstrapModal"
+  
   @ViewChild('modalElement') public modalElement!: ElementRef;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.inicializeModal();
+      this.initializeModal(); // Corregido "inicializeModal" a "initializeModal" para una mejor claridad
     }
   }
-  inicializeModal(): void {
+
+  initializeModal(): void {
     import('bootstrap').then((bootstrap) => {
-      this.bootdtrapModal = new bootstrap.Modal(this.modalElement.nativeElement);
-    })
+      this.bootstrapModal = new bootstrap.Modal(this.modalElement.nativeElement);
+    });
   }
 
-  open(pokemon: Pokemon): void {
-    this.pokemon = pokemon;
+  open(pokemon: Pokemon | null): void {
+    // Verifica que el Pokémon no sea nulo
+    if (!pokemon) {
+      console.error("No se proporcionó un Pokémon válido.");
+      return;
+    }
+
+    this.pokemon = pokemon; // Asigna el Pokémon a la propiedad del componente
+
     if (isPlatformBrowser(this.platformId)) {
-      if (this.bootdtrapModal) {
-        this.bootdtrapModal.show();
+      // Si el modal ya está inicializado, simplemente lo mostramos
+      if (this.bootstrapModal) {
+        this.bootstrapModal.show();
       } else {
-        this.inicializeModal();
+        // Si no está inicializado, lo inicializamos y luego lo mostramos
+        this.initializeModal();
         setTimeout(() => {
-          this.bootdtrapModal.show();
-        }, 0)
+          this.bootstrapModal.show();
+        }, 0);
       }
     }
-
   }
-
 
   close(): void {
-    this.bootdtrapModal.hide();
+    if (this.bootstrapModal) {
+      this.bootstrapModal.hide(); // Asegúrate de que el modal esté inicializado antes de ocultarlo
+    }
   }
 }
-
-
-

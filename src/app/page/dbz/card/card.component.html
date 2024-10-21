@@ -7,15 +7,19 @@
         <div class="col-6" *ngFor="let dbz of dbzAll.items">
             <div class="card flixed-card">
                 <img [src]="dbz.Data?.image"
-                     class="card-img-top flixed-img" alt="...">
+                    class="card-img-top flixed-img" alt="...">
                 <div class="card-body flixed-body">
                     <h5 class="card-title">{{ dbz.name }}</h5>
-                    <p class="card-text">{{ dbz.Data?.description }}</p>
-                    <p class="card-text"><strong>Ki:</strong> {{ dbz.Data?.ki }} / {{ dbz.Data?.maxKi }}</p>
-                    <p class="card-text"><strong>Raza:</strong> {{ dbz.race }}</p>
-                    <p class="card-text"><strong>Género:</strong> {{ dbz.gender }}</p>
-                    <p class="card-text"><strong>Afiliación:</strong> {{ dbz.affiliation }}</p>
-                    <a [href]="'/bdz/character/' + dbz.id" class="btn btn-primary">Más Información</a>
+
+                    <p class="card-text"><strong>Ki:</strong> {{ dbz.Data?.ki }}
+                        / {{ dbz.Data?.maxKi }}</p>
+                    <p class="card-text"><strong>Raza:</strong> {{ dbz.race
+                        }}</p>
+                    <p class="card-text"><strong>Género:</strong> {{ dbz.gender
+                        }}</p>
+
+                    <a [href]="'/bdz/character/' + dbz.id"
+                        class="btn btn-primary">Más Información</a>
                 </div>
             </div>
         </div>
@@ -29,8 +33,3 @@
         </div>
     </div>
 </ng-template>
-
-
-
-
-                     
