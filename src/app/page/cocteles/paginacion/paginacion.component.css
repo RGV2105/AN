@@ -1,0 +1,39 @@
+/* Estilos generales para la paginación */
+.pagination {
+    margin-top: 20px;
+  }
+  
+  .page-item {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+  
+  .page-link {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6b6b; /* Color vibrante para las letras */
+    background-color: #fdf3f0; /* Fondo claro para destacar */
+    border: 2px solid #ff6b6b;
+    border-radius: 50%; /* Bordes redondeados para darle forma circular */
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .page-link:hover {
+    background-color: #ff6b6b;
+    color: white;
+  }
+  
+  /* Clase activa para la letra seleccionada */
+  .page-link.active {
+    background-color: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+  }
+  
+  /* Margen superior para ajustar la alineación */
+  .page-item.mt-1 {
+    margin-top: 10px;
+  }
+  

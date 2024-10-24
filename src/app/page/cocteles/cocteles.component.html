@@ -1,1 +1,8 @@
-<p>cocteles works!</p>
+<!-- Componente de búsqueda -->
+<app-search (eventEmitTermino)="searchCoctel($event)"></app-search>
+
+<!-- Componente de paginación -->
+<app-paginacion (eventNewCocteles)="setNewCocteles($event)"></app-paginacion>
+
+<!-- Componente de tarjeta con los cocteles -->
+<app-card [cocteles]="coctelAll"></app-card>

@@ -1,0 +1,86 @@
+/* Estilos generales del modal */
+.modal-content {
+    border-radius: 15px;
+    background-color: #fdf3f0; /* Color claro que evoca frescura */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-header {
+    background-color: #ff6b6b; /* Color vibrante como tono principal */
+    color: #fff;
+  }
+  
+  .modal-title {
+    font-family: 'Lobster', cursive;
+    font-size: 1.8rem;
+  }
+  
+  .btn-close-white {
+    background-color: #fff; /* Cierre del modal en blanco */
+  }
+  
+  .modal-body {
+    font-family: 'Roboto', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Estilos para la imagen */
+  .modal-body img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .modal-body img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Sección de detalles del cóctel */
+  .modal-body .border-bottom {
+    border-bottom: 2px solid #ff6b6b;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+  
+  /* Sección de ingredientes */
+  h5 {
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    font-family: 'Lobster', cursive;
+  }
+  
+  ul.list-unstyled li {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Sección de instrucciones */
+  .modal-body p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Estilos del footer */
+  .modal-footer {
+    background-color: #ffe6e6;
+    border-top: 1px solid #ff6b6b;
+    padding: 15px;
+  }
+  
+  .modal-footer .btn-secondary {
+    background-color: #ff6b6b;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-footer .btn-secondary:hover {
+    background-color: #ff4c4c;
+  }
+  

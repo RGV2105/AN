@@ -1,16 +1,14 @@
 
-
-
 <div class="row">
-  <!-- Componente de búsqueda de personajes -->
-  <dbz-search (eventSearch)="searchDbz($event)"></dbz-search>
+    <!-- Componente de búsqueda para buscar personajes de Dragon Ball Z -->
+    <dbz-search (eventSearch)="searchDbz($event)" />
 </div>
 
-<!-- Componente de paginación -->
-<Dbz-pagi (eventNewDbzs)="setNewDbz($event)"></Dbz-pagi>
+<!-- Componente de paginación para navegar entre los resultados -->
+<Dbz-pagi (eventNewDbzs)="setNewDbz($event)" />
 
-<!-- Componente de tarjetas de personajes -->
-<Dbz-card [dbzAll]="dbzs"></Dbz-card>
+<!-- Componente que muestra las tarjetas de personajes de Dragon Ball Z -->
+<Dbz-card [dbzAll]="dbzs" />
 
-<!-- Componente de paginación repetido si es necesario, por ejemplo, al final de la lista -->
-<Dbz-pagi (eventNewDbzs)="setNewDbz($event)"/>
+<!-- Componente de paginación nuevamente para permitir la navegación entre más resultados -->
+<Dbz-pagi (eventNewDbzs)="setNewDbz($event)" />

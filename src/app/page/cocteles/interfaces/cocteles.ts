@@ -1,2 +1,3 @@
-export interface Cocteles {
+export interface cocteles {
+    drinks: { [key: string]: null | string }[];
 }

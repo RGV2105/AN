@@ -1,0 +1,42 @@
+/* Estilo del contenedor de la barra de búsqueda */
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Estilo del campo de texto */
+  .form-control {
+    border-radius: 30px 0 0 30px;
+    border: 2px solid #ff6b6b;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #ff6b6b;
+    box-shadow: none;
+  }
+  
+  /* Botón de búsqueda */
+  .btn-outline-primary {
+    border-radius: 0 30px 30px 0;
+    border: 2px solid #ff6b6b;
+    color: #ff6b6b;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+  }
+  
+  /* Icono de búsqueda */
+  .bi-search {
+    font-size: 1.2rem;
+  }
+  

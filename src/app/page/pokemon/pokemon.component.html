@@ -1,12 +1,31 @@
 
-<div class="row">
-    <poke-busqueda (eventSearch)="searchPokemon($event)" />
-</div>
-
-
-<pokemon-pagi (eventNewPokemons)="setNewPokemon($event)"  />
-
-
-<pokemon-card [pokemonsAll]="pokemons" />
-
-<pokemon-pagi (eventNewPokemons)="setNewPokemon($event)"/>
+<div class="container">
+    <!-- Sección de búsqueda -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <poke-busqueda (eventSearch)="searchPokemon($event)" class="w-100" />
+      </div>
+    </div>
+  
+    <!-- Sección de paginación superior -->
+    <div class="row mb-4">
+      <div class="col-12 d-flex justify-content-center">
+        <pokemon-pagi (eventNewPokemons)="setNewPokemon($event)" />
+      </div>
+    </div>
+  
+    <!-- Sección de tarjetas de Pokémon -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <pokemon-card [pokemonsAll]="pokemons" class="w-100" />
+      </div>
+    </div>
+  
+    <!-- Sección de paginación inferior -->
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <pokemon-pagi (eventNewPokemons)="setNewPokemon($event)" />
+      </div>
+    </div>
+  </div>
+  
